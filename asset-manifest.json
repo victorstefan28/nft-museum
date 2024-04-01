@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nft-museum/static/css/main.e423a8cd.css",
+    "main.js": "/nft-museum/static/js/main.23124f15.js",
+    "static/js/453.4f5a16c7.chunk.js": "/nft-museum/static/js/453.4f5a16c7.chunk.js",
+    "index.html": "/nft-museum/index.html",
+    "main.e423a8cd.css.map": "/nft-museum/static/css/main.e423a8cd.css.map",
+    "main.23124f15.js.map": "/nft-museum/static/js/main.23124f15.js.map",
+    "453.4f5a16c7.chunk.js.map": "/nft-museum/static/js/453.4f5a16c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e423a8cd.css",
+    "static/js/main.23124f15.js"
+  ]
+}
