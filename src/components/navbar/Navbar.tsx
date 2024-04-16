@@ -60,6 +60,9 @@ const Navbar: React.FC<INavbarProps> = () => {
               textTransform: "capitalize",
               fontSize: "1rem",
             }}
+            onClick={() => {
+              window.location.href = "#explore";
+            }}
           >
             Collections
           </Button>
@@ -70,6 +73,7 @@ const Navbar: React.FC<INavbarProps> = () => {
               fontFamily: "Poppins, sans-serif",
               textTransform: "capitalize",
               fontSize: "1rem",
+              display: "none",
             }}
           >
             About us
@@ -81,6 +85,9 @@ const Navbar: React.FC<INavbarProps> = () => {
               fontFamily: "Poppins, sans-serif",
               textTransform: "unset",
               fontSize: "1rem",
+            }}
+            onClick={() => {
+              window.location.href = "https://ici.ro";
             }}
           >
             ICI.ro
@@ -103,6 +110,9 @@ const Navbar: React.FC<INavbarProps> = () => {
             textTransform: "lowercase",
           }}
           className={classes.buttonPurple}
+          onClick={() => {
+            window.location.href = "https://nft.ici.ro";
+          }}
         >
           explore marketplace
         </Button>

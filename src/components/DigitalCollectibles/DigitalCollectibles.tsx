@@ -9,7 +9,7 @@ const DigitalCollectibles = () => {
           position: "relative",
           width: "100%",
           maxWidth: "100%",
-          paddingBottom: "19rem",
+          paddingBottom: "30vh",
         }}
       >
         <VideoBackground videoSource="digital.mp4">
@@ -59,7 +59,6 @@ const DigitalCollectibles = () => {
               alignItems: "flex-start",
 
               gap: "1.5rem",
-              width: "56.25vw",
             }}
           >
             <Typography

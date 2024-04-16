@@ -12,36 +12,32 @@ import "./App.css";
 import DigitalCollectibles from "./components/DigitalCollectibles/DigitalCollectibles";
 import Powering from "./components/Powering/Powering";
 import Footer from "./components/Footer/Footer";
-function MyParentComponent() {
-  const name = "Alice";
+import FrameComponent from "./components/iframe component/iframe";
+import { useFrame } from "./context/FrameContext";
 
-  return (
-    <MyChildComponent name={name} /> // Passing the "name" prop
-  );
-}
-
-// Child Component
-function MyChildComponent(props: any) {
-  return <p>Hello, {props.name}!</p>;
-}
-
-function TestComponent() {
-  const name = "Alice";
-  return <h1>Hello, {name}!</h1>;
-}
-
-function TestComponent2() {
-  return <button onClick={() => {}}> Click me</button>;
-}
-
-function TestComponent3() {
-  const divStyle = { color: "blue", fontSize: "12px" };
-  return <div style={divStyle}>Styled text</div>;
-}
+const frames = [
+  <FrameComponent url="https://anasaea.com/viewExhibition/iByfm8Fup55nxEi55" />,
+  <FrameComponent url="https://anasaea.com/viewExhibition/kfijyMn6KAYWgeexr" />,
+  <FrameComponent url="https://anasaea.com/viewExhibition/x2DtizwTx22rjG3tj" />,
+  <FrameComponent url="https://anasaea.com/viewExhibition/bdrjTGXX9LJG2mA5i" />,
+];
 
 function App() {
+  const { activeFrame, changeFrame } = useFrame();
+
+  if (activeFrame >= 0) {
+    console.log(activeFrame);
+    return frames[activeFrame];
+  }
   return (
     <>
+      {/* <iframe
+        height={"1400"}
+        width={"1000"}
+        content={"fit"}
+        src={"https://anasaea.com/viewExhibition/iByfm8Fup55nxEi55"}
+      /> */}
+      {/* <FrameComponent url="https://anasaea.com/viewExhibition/iByfm8Fup55nxEi55" /> */}
       <div
         style={{
           display: "flex",
@@ -62,7 +58,7 @@ function App() {
           }}
           style={{ maxWidth: "100%" }}
         >
-          <VideoBackground videoSource="firstvid.mp4">
+          <VideoBackground videoSource="firstvid-2.mp4">
             <Navbar />
             <FirstView />
           </VideoBackground>

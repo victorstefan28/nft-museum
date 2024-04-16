@@ -7,8 +7,10 @@ import {
 } from "@mui/material";
 import { Controller } from "react-hook-form";
 import MyForm from "../MyForm";
+import { useFrame } from "../../context/FrameContext";
 
 const Footer = () => {
+  const { changeFrame } = useFrame();
   return (
     <>
       <div
@@ -58,7 +60,7 @@ const Footer = () => {
           </div>
           <div style={{ bottom: 0, marginTop: "4.25rem" }}>
             <div
-              style={{ display: "flex", flexDirection: "row", gap: "1.25rem" }}
+              style={{ display: "none", flexDirection: "row", gap: "1.25rem" }}
             >
               <div
                 style={{
@@ -178,8 +180,9 @@ const Footer = () => {
                 lineHeight: "normal",
                 textAlign: "center",
               }}
+              onClick={() => changeFrame(0)}
             >
-              Museum 1
+              The Globe
             </Typography>
             <Typography
               sx={{
@@ -193,8 +196,9 @@ const Footer = () => {
                 lineHeight: "normal",
                 textAlign: "center",
               }}
+              onClick={() => changeFrame(1)}
             >
-              Museum 2
+              Garden Museum
             </Typography>
             <Typography
               sx={{
@@ -208,8 +212,9 @@ const Footer = () => {
                 lineHeight: "normal",
                 textAlign: "center",
               }}
+              onClick={() => changeFrame(2)}
             >
-              Museum 3
+              Olympic Museum 1924 - 2004
             </Typography>
             <Typography
               sx={{
@@ -223,8 +228,9 @@ const Footer = () => {
                 lineHeight: "normal",
                 textAlign: "center",
               }}
+              onClick={() => changeFrame(3)}
             >
-              Museum 4
+              ICI Bucharest Museum
             </Typography>
           </div>
         </div>
@@ -272,7 +278,12 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              Memories of future self
+              <a
+                style={{ color: "#CCC" }}
+                href="https://nft.ici.ro/memories-of-future-self"
+              >
+                Memories of future self
+              </a>
             </Typography>
             <Typography
               sx={{
@@ -287,7 +298,12 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              Our AI Story
+              <a
+                href="https://nft.ici.ro/our-ai-story"
+                style={{ color: "#CCC" }}
+              >
+                Our AI Story
+              </a>
             </Typography>
             <Typography
               sx={{
@@ -302,7 +318,12 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              Generational Circle
+              <a
+                href="https://nft.ici.ro/the-generational-circle"
+                style={{ color: "#CCC" }}
+              >
+                Generational Circle
+              </a>
             </Typography>
             <Typography
               sx={{
@@ -317,7 +338,9 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              ICONS
+              <a href="https://nft.ici.ro/icons" style={{ color: "#CCC" }}>
+                ICONS
+              </a>
             </Typography>
             <Typography
               sx={{
@@ -332,7 +355,12 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              Past | Present | Future
+              <a
+                href="https://nft.ici.ro/past-present-future"
+                style={{ color: "#CCC" }}
+              >
+                Past | Present | Future
+              </a>
             </Typography>
             <Typography
               sx={{
@@ -347,7 +375,12 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              A world in stamp
+              <a
+                href="https://nft.ici.ro/a-world-in-a-stamp"
+                style={{ color: "#CCC" }}
+              >
+                A world in stamp
+              </a>
             </Typography>
           </div>
         </div>
@@ -396,7 +429,9 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              ICI.ro
+              <a href="http://ici.ro/" style={{ color: "#CCC" }}>
+                ICI.ro
+              </a>
             </Typography>
             <Typography
               sx={{
@@ -411,7 +446,9 @@ const Footer = () => {
                 textAlign: "center",
               }}
             >
-              nft.ici.ro
+              <a href="http://nft.ici.ro/" style={{ color: "#CCC" }}>
+                nft.ici.ro
+              </a>
             </Typography>
           </div>
         </div>
@@ -464,6 +501,7 @@ const Footer = () => {
                 fontStyle: "normal",
                 lineHeight: "normal",
                 textAlign: "center",
+                display: "none",
               }}
             >
               Import
@@ -481,6 +519,7 @@ const Footer = () => {
                 fontStyle: "normal",
                 lineHeight: "normal",
                 textAlign: "center",
+                display: "none",
               }}
             >
               Privacy Policy
@@ -498,6 +537,7 @@ const Footer = () => {
                 fontStyle: "normal",
                 lineHeight: "normal",
                 textAlign: "center",
+                display: "none",
               }}
             >
               Terms of Service

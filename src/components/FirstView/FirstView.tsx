@@ -1,13 +1,15 @@
 import { Button, Typography } from "@mui/material";
+import { useFrame } from "../../context/FrameContext";
 
 const FirstView = () => {
+  const { changeFrame } = useFrame();
   return (
     <>
       <div style={{ marginLeft: "2vw" }}>
         <Typography
           sx={{
             position: "relative",
-            marginTop: "20vh",
+            marginTop: "30vh",
             fontSize: "6.94vw",
             fontFamily: "'Montserrat', sans-serif",
             fontWeight: "700",
@@ -58,12 +60,13 @@ const FirstView = () => {
             },
             fontFamily: "Montserrat, sans-serif",
             fontStyle: "normal",
-            fontSize: "15px",
+            fontSize: "1.25rem",
             fontWeight: "500",
             lineHeight: "normal",
             padding: "16px 42px",
             textTransform: "lowercase",
           }}
+          onClick={() => changeFrame(1)}
         >
           enter now
         </Button>

@@ -78,6 +78,9 @@ const Powering = () => {
                 padding: "16px 42px",
                 textTransform: "lowercase",
               }}
+              onClick={() => {
+                window.location.href = "https://nft.ici.ro";
+              }}
             >
               explore marketplace
             </Button>

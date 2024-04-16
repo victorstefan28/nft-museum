@@ -35,6 +35,7 @@ function MyForm() {
   const onSubmit = (data: { email: string }) => {
     console.log(data);
     /// do smth here with data.email
+    window.location.href = `mailto:${data.email}`;
   };
 
   return (

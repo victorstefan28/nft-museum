@@ -1,13 +1,15 @@
 import { Button, Typography } from "@mui/material";
 import { useMemo } from "react";
 import { useSwiper, useSwiperSlide } from "swiper/react";
+import { useFrame } from "../../context/FrameContext";
 
 interface CarouselCardProps {
   scrollRef?: React.MutableRefObject<HTMLElement | null>;
   id?: number;
   name: string;
-  description: string;
+  description?: string;
   imagePath?: string;
+  museumId: number;
 }
 
 const CarouselCard = ({
@@ -16,10 +18,14 @@ const CarouselCard = ({
   name,
   description,
   imagePath,
+  museumId,
 }: CarouselCardProps) => {
   const swiper = useSwiper();
   const swiperSlide = useSwiperSlide();
   console.log(swiperSlide);
+
+  const { changeFrame } = useFrame();
+
   const isActive = useMemo(() => {
     return swiperSlide?.isActive;
   }, [swiperSlide]);
@@ -40,20 +46,19 @@ const CarouselCard = ({
             columnGap: "20px",
             marginTop: "3rem",
             flexWrap: "wrap",
-            boxSizing: "border-box",
           }}
         >
           <img
             style={{
-              flexShrink: 0,
-              width: "55.55rem",
-              height: "31.25rem",
+              width: "50vw",
+              borderRadius: "15px",
+              maxWidth: "55.55rem",
               alignSelf: "center",
               objectFit: "contain",
             }}
             src={imagePath}
             alt="david popovici"
-          ></img>
+          />
           <span
             style={{
               marginTop: "3rem",
@@ -82,7 +87,7 @@ const CarouselCard = ({
                 sx={{
                   position: "relative",
                   justifySelf: "center",
-                  fontSize: "5.25rem",
+                  fontSize: "clamp(16px, 8.2vw, 84px)",
                   fontFamily: "'Montserrat', sans-serif",
                   fontWeight: "700",
                   color: "#B9F",
@@ -132,6 +137,7 @@ const CarouselCard = ({
                     padding: "16px 42px",
                     textTransform: "lowercase",
                   }}
+                  onClick={() => changeFrame(museumId)}
                 >
                   enter now
                 </Button>

@@ -9,7 +9,7 @@ import { Pagination, Navigation } from "swiper/modules";
 const ExploreView = () => {
   return (
     <>
-      <div style={{ background: "#000", paddingBottom: "4vw" }}>
+      <div id="explore" style={{ background: "#000", paddingBottom: "4vw" }}>
         <Typography
           sx={{
             position: "relative",
@@ -38,53 +38,55 @@ const ExploreView = () => {
           }}
         />
         <Swiper
-          slidesPerView={3}
+          slidesPerView={2} // Default to 3 slides per view
           centeredSlides={true}
-          spaceBetween={600}
-          tabIndex={3}
           initialSlide={1}
-          className="mySwiper"
+          spaceBetween={200}
         >
           <SwiperSlide>
             <CarouselCard
               id={0}
-              name="Agerpres"
-              description={"Memories from the Future Self"}
-              imagePath="agerpres.png"
+              name="Garden Museum"
+              //description={"Memories from the Future Self"}
+              imagePath="garden.png"
+              museumId={1}
             />
           </SwiperSlide>
           <SwiperSlide>
             <CarouselCard
               id={1}
-              name="David Popovici"
-              description={"ICONS"}
-              imagePath="david.png"
+              name="ICI Museum"
+              //description={"ICONS"}
+              imagePath="themuseum.png"
+              museumId={3}
             />
           </SwiperSlide>
           <SwiperSlide>
             <CarouselCard
               id={2}
-              name="COSR"
-              imagePath="generational.png"
-              description={"The Generational Circle"}
+              name="Olympic Museum"
+              imagePath="olympic.png"
+              //description={"The Generational Circle"}
+              museumId={2}
             />
           </SwiperSlide>
           <SwiperSlide>
             <CarouselCard
               id={3}
-              name="ICI Bucharest"
-              description={"Past | Present | Future"}
-              imagePath="ici.png"
+              name="The Globe"
+              //description={"Past | Present | Future"}
+              imagePath="globe.png"
+              museumId={0}
             />
           </SwiperSlide>
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <CarouselCard
-              id={3}
+              id={4}
               name="BCU Bucharest"
-              description={"Our AI Story"}
+              //description={"Our AI Story"}
               imagePath="bcu.png"
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </>
